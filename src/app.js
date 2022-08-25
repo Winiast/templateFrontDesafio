@@ -1,4 +1,4 @@
-import startMap from './components/map/map';
+import { MapView as startMap } from './components/map/map';
 import './api/index';
 
 export const renderBody = _ => `
