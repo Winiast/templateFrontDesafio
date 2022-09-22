@@ -1,9 +1,15 @@
 form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: 50px;
 }
 
 .container {
   background-color: blue;
+}
+
+.InputsDoTipoPreencher {
+  display: flex;
+  flex-direction: column;
 }

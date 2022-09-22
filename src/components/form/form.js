@@ -1,7 +1,7 @@
 import "./form.css";
 
-export const containerForm = () => {
-  return `<div class=container>${formulario()}</div>`;
+export const containerForm = (latitude, longitude) => {
+  return `<div class=container>${formulario(latitude, longitude)}</div>`;
 };
 
 const camposPrencherNome = () => {
@@ -15,7 +15,7 @@ const camposPrencherNome = () => {
                         />`;
 };
 
-const campoRetornaLatLong = () => {
+const campoRetornaLatLong = (latitude, longitude) => {
   return `
                 <div class="buscarEndereco">
                         <input id="address" type="textbox" class="cep" type="text" placeholder="Endereço Cliente" />    <input type="button" id="buscar" value="Buscar" onclick="pegaInformacoesEndereco()">
@@ -28,12 +28,14 @@ const campoRetornaLatLong = () => {
                     class="valoresCordenada"
                     type="text"
                     placeholder="Latitude"
+                    value=${latitude}
                 />
                 <input
                     id="Longitude"
                     class="valoresCordenada"
                     type="text"
                     placeholder="Longitude"
+                    value=${longitude}
                 />
                 </div>
 
@@ -55,10 +57,10 @@ const parteDeBotoes = () => {
     `;
 };
 
-const formulario = () => {
+const formulario = (latitude, longitude) => {
   return `<form>
             ${camposPrencherNome()}
-            ${campoRetornaLatLong()}
+            ${campoRetornaLatLong(latitude, longitude)}
             ${parteDeBotoes()}
           </form>
 `;

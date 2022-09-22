@@ -1,12 +1,14 @@
 import { MapView as startMap } from "./components/map/map";
-import { formulario, containerForm } from "./components/form/form";
-import "./api/index";
+import { containerForm } from "./components/form/form";
+import { callApi } from "./api/index";
 
-export const renderBody = () => `
-    <main style="display:flex; justify-content: space-evenly; background-color: red;">
-        <div style="width: 50%";>${containerForm()}</div>
+export const renderBody = (latitude, longitude) =>
+  `
+    <main style="display:flex; justify-content: space-evenly;">
+        <div style="width: 50%";>${containerForm(latitude, longitude)}</div>
         <div id="map"></div>
     </main>
+    ${console.log(callApi())}
 `;
 
 export const init = (_) => {
